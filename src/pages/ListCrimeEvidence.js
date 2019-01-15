@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import { View, SectionList, Text, Image, TouchableOpacity } from 'react-native';
+import {
+  View,
+  SectionList,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
+import ItemList from '../components/ItemList';
 
 export default class ListCrimeEvidence extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { checked: true };
     this.evidenceList = [
       {
         title: 'Suspeitos',
@@ -46,37 +54,12 @@ export default class ListCrimeEvidence extends Component {
   }
 
   renderSectionHeader = ({ section: { title } }) => (
-    <Text
-      style={{
-        backgroundColor: '#dd1a',
-        paddingVertical: 8,
-        marginHorizontal: 10,
-        marginVertical: 10,
-        textAlign: 'center',
-        fontSize: 16,
-        borderRadius: 20,
-        borderWidth: 0.5,
-        overflow: 'hidden',
-      }}
-    >
-      {title}
-    </Text>
+    <Text style={styles.sectionTitle}>{title}</Text>
   );
 
-  renderItem = ({ item }) => (
-    <TouchableOpacity
-      style={{
-        flex: 1,
-        marginVertical: 5,
-        paddingLeft: 10,
-        paddingVertical: 5,
-        backgroundColor: '#0001',
-      }}
-    >
-      <Text>{item}</Text>
-      <Image />
-    </TouchableOpacity>
-  );
+  renderItem = ({ item }) => {
+    return <ItemList data={item} />;
+  };
 
   keyExtractor = (item, index) => `${item.title}${index}`;
   render = () => {
@@ -92,7 +75,19 @@ export default class ListCrimeEvidence extends Component {
     );
   };
 }
-
+const styles = StyleSheet.create({
+  sectionTitle: {
+    backgroundColor: '#dd1a',
+    paddingVertical: 8,
+    marginHorizontal: 10,
+    marginVertical: 10,
+    textAlign: 'center',
+    fontSize: 16,
+    borderRadius: 20,
+    borderWidth: 0.5,
+    overflow: 'hidden',
+  },
+});
 ListCrimeEvidence.navigationOptions = {
   header: null,
 };
