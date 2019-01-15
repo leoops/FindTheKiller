@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import {
-  View,
-  SectionList,
-  Text,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { View, SectionList, Text } from 'react-native';
 import ItemList from '../components/ItemList';
+import styles from './ListCrimeEvidence.style';
 
 export default class ListCrimeEvidence extends Component {
   constructor(props) {
@@ -75,19 +69,7 @@ export default class ListCrimeEvidence extends Component {
     );
   };
 }
-const styles = StyleSheet.create({
-  sectionTitle: {
-    backgroundColor: '#dd1a',
-    paddingVertical: 8,
-    marginHorizontal: 10,
-    marginVertical: 10,
-    textAlign: 'center',
-    fontSize: 16,
-    borderRadius: 20,
-    borderWidth: 0.5,
-    overflow: 'hidden',
-  },
-});
+
 ListCrimeEvidence.navigationOptions = {
   header: null,
 };
