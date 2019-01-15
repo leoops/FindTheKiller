@@ -39,8 +39,18 @@ export default class ItemList extends Component {
 }
 
 const styles = StyleSheet.create({
-  discartStyle: { textDecorationLine: 'line-through' },
-  textItem: { flex: 1, fontSize: 16, paddingVertical: 5 },
+  discartStyle: {
+    textDecorationLine: 'line-through',
+    backgroundColor: '#a003',
+    borderRadius: 10,
+    borderWidth: 0.1,
+    overflow: 'hidden',
+  },
+  textItem: {
+    flex: 1,
+    fontSize: 16,
+    paddingVertical: 2,
+  },
   itemList: {
     flex: 1,
     flexDirection: 'row',
@@ -48,11 +58,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 5,
     paddingHorizontal: 10,
-    paddingVertical: 5,
-    backgroundColor: '#0001',
+    paddingVertical: 10,
   },
   icon: {
     height: 24,
     width: 24,
+    position: 'absolute',
+    right: 10,
   },
 });
