@@ -41,7 +41,7 @@ export default class ListCrimeEvidence extends Component {
         data: [
           'Biblioteca',
           'Cozinha',
-          'Hall',
+          'Entrada',
           'Escritório',
           'Sala de estar',
           'Sala de jantar',
