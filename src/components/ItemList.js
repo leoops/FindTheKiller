@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import Exclude from '../assets/img/multiply.png';
+
+/**
+ * @author Leonardo Pereira
+ * @description Componente de renderização de itens de lista
+ * @class ItemList
+ * @extends Component
+ */
 export default class ItemList extends Component {
   constructor(props) {
     super(props);
     this.state = { checked: false };
   }
-  discartItem = () => {
+
+  /**
+   * @memberof ItemList
+   * @instance
+   * @method selectItem - Metodo de seleção de item.
+   * @param {func} callback - Callback
+   */
+  selectItem = () => {
     this.setState({ checked: !this.state.checked });
   };
 
@@ -14,7 +28,7 @@ export default class ItemList extends Component {
     const { checked } = this.state;
     const { data } = this.props;
     return (
-      <TouchableOpacity style={styles.itemList} onPress={this.discartItem}>
+      <TouchableOpacity style={styles.itemList} onPress={this.selectItem}>
         <Text style={[styles.textItem, checked ? styles.discartStyle : null]}>
           {data}
         </Text>
