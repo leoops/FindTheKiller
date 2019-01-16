@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   textItem: {
     flex: 1,
     fontSize: 16,
+    paddingLeft: 5,
     paddingVertical: 2,
     paddingHorizontal: 5,
   },
@@ -59,12 +60,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 5,
     paddingLeft: 20,
-    paddingRight: 10,
+    paddingRight: 20,
   },
   icon: {
     height: 24,
     width: 24,
     position: 'absolute',
-    right: 8,
+    right: 18,
   },
 });
